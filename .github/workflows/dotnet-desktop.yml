@@ -16,6 +16,9 @@ on:
       url:
         description: Build URL
         required: true
+      path:
+        description: Path from Programs folder
+        required: true
       exelocalpath:
         description: Path to EXE
         required: true
