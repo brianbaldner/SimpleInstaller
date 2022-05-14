@@ -67,6 +67,7 @@ jobs:
           ${{ github.event.inputs.devname }}
           ${{ github.event.inputs.hex }}
           ${{ github.event.inputs.url }}
+          ${{ github.event.inputs.path }}
           ${{ github.event.inputs.exelocalpath }}
           ${{ github.event.inputs.processname }}
           ${{ github.event.inputs.GUID }}
