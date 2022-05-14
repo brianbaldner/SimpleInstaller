@@ -1,0 +1,68 @@
+name: Create Installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Bump Version
+        default: v1.0.0
+        required: true
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: SimpleInstaller.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      Test_Project_Path: SimpleInstaller/SimpleInstaller.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 5.0.x
+        
+    - name: Write File
+      uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: SimpleInstaller/program.txt
+        contents: |
+          $ProgramName
+          $DeveloperName
+          $Hex
+          $URL
+          $ProgramPath
+          $EXELocalPath
+          $ProcessName
+          $GUID
+        write-mode: overwrite
+  
+    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    # Execute all unit tests in the solution
+    - name: Execute unit tests
+      run: dotnet publish -p:PublishSingleFile=true -r win-x64 -c Release --self-contained false
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Final Product
+        path: SimpleInstaller\bin\Release\net6.0-windows\publish\win-x64\SimpleInstaller.exe
+
