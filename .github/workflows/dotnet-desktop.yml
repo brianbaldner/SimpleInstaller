@@ -75,7 +75,7 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet publish -p:PublishSingleFile=true -r win-x64 -c Release --self-contained false
+      run: msbuild SimpleInstaller.sln
       
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
