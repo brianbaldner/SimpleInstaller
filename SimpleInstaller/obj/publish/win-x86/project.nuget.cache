@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UzOBWh7nnhI8NRjVK9scv2OBmQKzfnhRKY4M5xzSbo0FK1Va0Zx6/m2ymemhlWTDjZ3wn1LexafdDVNupzfjRQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\brian\\source\\repos\\SimpleInstaller\\SimpleInstaller\\SimpleInstaller.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brian\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.4\\microsoft.netcore.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\brian\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\brian\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x86.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

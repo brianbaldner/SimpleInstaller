@@ -1,0 +1,1 @@
+C:\Users\brian\source\repos\SimpleInstaller\SimpleInstaller\obj\Debug\net6.0-windows\win-x64\SimpleInstaller.csproj.AssemblyReference.cache

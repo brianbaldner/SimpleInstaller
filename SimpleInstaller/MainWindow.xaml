@@ -1,0 +1,62 @@
+﻿<Window x:Class="SimpleInstaller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleInstaller"
+        mc:Ignorable="d"
+        Title="Quick Installer" Height="400" Width="700"
+        WindowStyle="None"
+        Loaded="Window_Loaded"
+        Name="Window"
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF000534">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/back.png" Stretch="Fill"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#BF000000" MouseDown="Grid_MouseDown">
+            <TextBlock MouseEnter="TextBlock_MouseEnter" MouseDown="TextBlock_MouseDown" MouseLeave="TextBlock_MouseLeave" HorizontalAlignment="Right" Cursor="Hand" Width="20" Padding="0" Height="20" Foreground="White" FontSize="15" VerticalAlignment="Center" Background="Transparent" TextAlignment="Center">X</TextBlock>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Visibility="Visible" Name="startpage">
+            <Image x:Name="Logo" Margin="0,20,0,10" Source="pack://application:,,,/Logo.png" Width="600" Height="75"></Image>
+            <TextBlock x:Name="Name" Width="auto" Foreground="White" HorizontalAlignment="Center" FontSize="36" Text="sdfsdf"></TextBlock>
+            <TextBlock x:Name="Developer" Height="30" Margin="0,00,0,10" Width="auto" Foreground="#FFE6E6E6" HorizontalAlignment="Center" FontSize="24" Text="sdfsdafsdf"></TextBlock>
+            <TextBlock MouseDown="Install" Cursor="Hand" Width="200" Padding="7" Height="65" Foreground="White" HorizontalAlignment="Center" FontSize="36" Background="#FF811700" VerticalAlignment="Center" TextAlignment="Center">Install</TextBlock>
+            <TextBlock Cursor="Hand" Width="200" Height="25" Foreground="White" HorizontalAlignment="Center" FontSize="18" Background="#FF818181" VerticalAlignment="Center" TextAlignment="Center" MouseDown="SettingsPress">Settings</TextBlock>
+            <TextBlock Cursor="Hand" MouseDown="LinkPress" Margin="0,30,0,5" Width="auto" Foreground="White" HorizontalAlignment="Center" FontSize="18">Installer by:</TextBlock>
+            <Image Cursor="Hand" MouseDown="LinkPress" Source="pack://application:,,,/log.png" Width="100"></Image>
+        </StackPanel>
+        <StackPanel x:Name="settings" Width="400" Height="75" Background="#E5000000" Grid.Row="1" Visibility="Collapsed">
+            <Grid Background="#BF000000">
+                <TextBlock MouseEnter="TextBlock_MouseEnter" MouseDown="SettingsXPress" MouseLeave="TextBlock_MouseLeave" HorizontalAlignment="Right" Cursor="Hand" Width="20" Padding="0" Height="20" Foreground="White" FontSize="15" VerticalAlignment="Center" Background="Transparent" TextAlignment="Center">X</TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Left">
+                <TextBlock Margin="30,0,0,0" HorizontalAlignment="Left" Foreground="White">Download Location:</TextBlock>
+                <TextBox Name="Location" Width="200" Margin="150,0,0,0" Background="#FF202020" BorderBrush="#FF656565"  Foreground="White"></TextBox>
+            </Grid>
+            <Grid Margin="0,10,0,10" HorizontalAlignment="Left">
+                <TextBlock Margin="30,0,0,0" HorizontalAlignment="Left" Foreground="White">Add desktop shortcut:</TextBlock>
+                <CheckBox Name="Shortcut" Margin="150,0,0,0" IsChecked="True"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Visibility="Collapsed" Name="downloadpage">
+            <TextBlock x:Name="InstallingTitle" Margin="00,80,0,0" Width="auto" Foreground="White" HorizontalAlignment="Center" FontSize="36" Text="Installing"></TextBlock>
+            <Grid Width="200" Height="40" Margin="00,50,0,0" Background="White">
+                <Grid x:Name="progressBar" HorizontalAlignment="Left" Width="0" Height="40" Background="red"></Grid>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Visibility="Collapsed" Name="endpage">
+            <Image Name="logoo" Margin="0,20,0,10" Source="pack://application:,,,/Logo.png" Width="600" Height="75"></Image>
+            <TextBlock Padding="0,0,0,30" Width="auto" Foreground="White" HorizontalAlignment="Center" FontSize="36" Text="Install Completed"></TextBlock>
+            <TextBlock MouseDown="TextBlock_MouseDown_1" Cursor="Hand" Width="200" Padding="7" Height="65" Foreground="White" HorizontalAlignment="Center" FontSize="36" Background="#FF811700" VerticalAlignment="Center" TextAlignment="Center">Launch</TextBlock>
+            <TextBlock MouseDown="TextBlock_MouseDown" Cursor="Hand" Width="200" Height="25" Foreground="White" HorizontalAlignment="Center" FontSize="18" Background="#FF818181" VerticalAlignment="Center" TextAlignment="Center">Close Installer</TextBlock>
+            <TextBlock Cursor="Hand" MouseDown="LinkPress" Margin="0,30,0,5" Width="auto" Foreground="White" HorizontalAlignment="Center" FontSize="18">Installer by:</TextBlock>
+            <Image Cursor="Hand" MouseDown="LinkPress" Source="pack://application:,,,/log.png" Width="100"></Image>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4a3973ce-137f-42d5-a5c6-465e6b3289f3": {
+      "ProjectGuid": "4a3973ce-137f-42d5-a5c6-465e6b3289f3",
+      "DisplayName": "SimpleInstaller",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "59d8c9e9-effc-439f-8540-42ec021d633c": {
+      "ProjectGuid": "59d8c9e9-effc-439f-8540-42ec021d633c",
+      "DisplayName": "QuickInstallTool",
+      "ColorIndex": 1
+    },
+    "893051be-602b-46e1-a3c1-fb8e146bf6d6": {
+      "ProjectGuid": "893051be-602b-46e1-a3c1-fb8e146bf6d6",
+      "DisplayName": "SimpleUninstaller",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

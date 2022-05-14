@@ -1,0 +1,8 @@
+StatsVal Assistant
+Brian Baldner
+#781f28
+https://github.com/brianbaldner/statsval/blob/main/uselessapp/bin/Release/build.zip?raw=true
+\StatsVal\
+StatsVal Companion.exe
+StatsVal Companion
+0a762339-4748-44f9-be66-c49d2e02e990
